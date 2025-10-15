@@ -1,0 +1,12 @@
+.main-div {
+    height: 140px;
+    padding: 16px;
+    display: flex;
+    gap: 2px;
+    /* background: plum; */
+    /* border: 1px solid indigo; */
+}
+
+.hovered {
+    background-color: blue;
+}
