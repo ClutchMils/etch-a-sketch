@@ -1,12 +1,13 @@
+#container {
+    height: auto;
+    width: 960px;
+}
 .main-div {
-    height: 140px;
-    padding: 16px;
+    width: auto;
     display: flex;
-    gap: 2px;
-    /* background: plum; */
-    /* border: 1px solid indigo; */
+    background: gainsboro;
 }
 
 .hovered {
-    background-color: blue;
+    background-color: white;
 }

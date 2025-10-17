@@ -20,28 +20,59 @@ const insideDiv14 = document.createElement("div");
 const insideDiv15 = document.createElement("div");
 const insideDiv16 = document.createElement("div");
 
-console.log(insideDivOne.textContent = "e")
-console.log(insideDivTwo.textContent = "e")
-console.log(insideDivThree.textContent = "e")
-console.log(insideDivFour.textContent = "e")
-console.log(insideDivFive.textContent = "e")
-console.log(insideDivSix.textContent = "e")
-console.log(insideDivSeven.textContent = "e")
-console.log(insideDivEight.textContent = "e")
-console.log(insideDivNine.textContent = "e")
-console.log(insideDivTen.textContent = "e")
-console.log(insideDiv11.textContent = "e")
-console.log(insideDiv12.textContent = "e")
-console.log(insideDiv13.textContent = "e")
-console.log(insideDiv14.textContent = "e")
-console.log(insideDiv15.textContent = "e")
-console.log(insideDiv16.textContent = "e")
+const button = document.createElement("button");
+button.textContent = "test";
+
+button.addEventListener("click", ()=> {
+    let squares = 1;
+    squares = prompt("Enter the amount of grid squares","100 max squares" )
+    // console.log(squares);
+
+    // let gridRow = squares;
+    // let rowHolder = squares;
+
+    
+    let totalSquares = squares * squares;
+    // let rowHolderCount = 1;
+    // let rowPushCount = 1;
+
+    for (let rowHolderCount = 0; rowHolderCount < squares; rowHolderCount++){
+        const rowHolder = [];
+        rowHolder[rowHolderCount] = document.createElement("div"); 
+    }
+  
+    for (let rowCount = 0; rowCount < totalSquares; rowCount++){
+        const gridRow = [];
+        gridRow[rowCount] = document.createElement("div");           
+    }
+    
+
+});
+
+insideDivOne.textContent = "....";
+insideDivTwo.textContent = "....";
+insideDivThree.textContent = "....";
+insideDivFour.textContent = "....";
+insideDivFive.textContent = "....";
+insideDivSix.textContent = "....";
+insideDivSeven.textContent = "....";
+insideDivEight.textContent = "....";
+insideDivNine.textContent = "....";
+insideDivTen.textContent = "....";
+insideDiv11.textContent = "....";
+insideDiv12.textContent = "....";
+insideDiv13.textContent = "....";
+insideDiv14.textContent = "....";
+insideDiv15.textContent = "....";
+insideDiv16.textContent = "....";
 
 
 outsideDivOne.classList.add("main-div");
 outsideDivTwo.classList.add("main-div");
 outsideDivThree.classList.add("main-div");
 outsideDivFour.classList.add("main-div");
+
+
 
 outsideDivOne.appendChild(insideDivOne);
 outsideDivOne.appendChild(insideDivTwo);
@@ -61,27 +92,29 @@ outsideDivFour.appendChild(insideDiv15);
 outsideDivFour.appendChild(insideDiv16);
 
 const container = document.querySelector("#container");
+container.appendChild(button);
 container.appendChild(outsideDivOne);
 container.appendChild(outsideDivTwo);
 container.appendChild(outsideDivThree);
 container.appendChild(outsideDivFour);
 
-// const mainDiv = document.querySelector(".main-div")
+
 const divs = document.querySelectorAll("div"); 
 
+// etch-a-sketch function
 divs.forEach((div) => {
     div.addEventListener("mouseenter", () => {
-        // console.log("enter");
-        // console.log(div.childElementCount);
-        // div.classList.add('hovered');
-     for (const child of div.children){
-        // console.log(child.tagName);
+
+     for (const child of div.children)
+        {
            child.classList.add('hovered');
-     }
+        }
+
+    div.classList.remove('hovered');
     });
 
     div.addEventListener("mouseleave", () => {
-        console.log("leave");
+        // console.log("leave");
         div.classList.remove('hovered');
     });
 
