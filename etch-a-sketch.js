@@ -10,11 +10,16 @@ const element = [];
 button.textContent = "create etch-a-sketch";
 
 button.addEventListener("click", ()=> {
-      
     squares = prompt("Enter the amount of grid squares","100 max squares" )
 
+    
+
     if(squares <=100){
-          for (let rowCount = 0; rowCount < squares; rowCount++){
+        
+        container.innerHTML = '';
+        container.appendChild(button);
+
+        for (let rowCount = 0; rowCount < squares; rowCount++){
             row[rowCount] = document.createElement("div"); 
         }
         
@@ -23,6 +28,7 @@ button.addEventListener("click", ()=> {
             element[elementCount].textContent = "...";           
         }
 
+        
 
         for (let rowAppendCount = 0; rowAppendCount < squares; rowAppendCount++){
             
@@ -49,15 +55,14 @@ button.addEventListener("click", ()=> {
                 }
 
             div.classList.remove('hovered');
-            div.classList.add('sketch');
-            });
+            // div.classList.add('sketch');
 
-            div.addEventListener("mouseleave", () => {
-                // console.log("leave");
-               
-                // div.classList.remove('hovered');
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random()* 256);
+            const blue = Math.floor(Math.random()* 256);
+            const randomColor = `rgb(${red}, ${green}, ${blue})`;
+            div.style.backgroundColor = randomColor;
             });
-
         });
         
     } else {
