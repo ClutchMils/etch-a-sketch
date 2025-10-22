@@ -49,11 +49,13 @@ button.addEventListener("click", ()=> {
                 }
 
             div.classList.remove('hovered');
+            div.classList.add('sketch');
             });
 
             div.addEventListener("mouseleave", () => {
                 // console.log("leave");
-                div.classList.remove('hovered');
+               
+                // div.classList.remove('hovered');
             });
 
         });
